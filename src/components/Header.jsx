@@ -2,27 +2,34 @@ import React, { useEffect, useState } from 'react';
 import './header.css';
 
 function Header() {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  const [showButton, setShowButton] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.scrollY);
-    };
+    // Timer pour afficher le bouton après 3 secondes
+    const timer = setTimeout(() => {
+      setShowButton(true);
+    }, 3000);
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => clearTimeout(timer); // Nettoyage du timer
   }, []);
 
   return (
-    <section name='header' className='relative flex flex-col items-center justify-center bg-black h-screen starry-background'>
+    <section
+      name='header'
+      className='relative flex flex-col items-center justify-center bg-black h-screen starry-background'
+    >
       <h1 className='text-5xl font-bold text-white'>ANNE BACK</h1>
 
       <div
-        className={`absolute bottom-5 right-5 text-white text-lg font-semibold transition-all duration-300 ease-in-out ${
-          scrollPosition > 100 ? 'opacity-100' : 'opacity-0'
+        className={`transition-opacity duration-1000 ease-in-out mt-8 ${
+          showButton ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        Scroll Down
+        <button
+          className='text-white border-2 border-white px-6 py-3 rounded-lg font-semibold bg-transparent hover:bg-white hover:text-black transition-colors duration-300'
+        >
+          Click Me
+        </button>
       </div>
     </section>
   );
