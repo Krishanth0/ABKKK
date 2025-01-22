@@ -1,15 +1,13 @@
 import React from 'react';
-import Header from './components/Header';
 import Welcome from './components/Welcome';
-import Home from './components/home';
-import Book from './components/book'
+import Anneback from './components/Anneback'
+
 
 function App() {
   return (
     <>
-      <Header />
       <Welcome />
-      <Home />
+      <Anneback/>
     </>
   );
 }

@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  #global-cursor {
+    position: absolute;
+    pointer-events: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #000; /* Color of the main cursor */
+    transition: transform 0.1s ease;
+  }
+  
+  #cursor-trail {
+    position: absolute;
+    pointer-events: none;
+    z-index: 100;
+  }
+  
+  .trail-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6); /* Color of the trail dots */
+    animation: fade-out 0.3s forwards;
+  }
+  
+  @keyframes fade-out {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+  

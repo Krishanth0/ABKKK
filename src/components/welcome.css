@@ -1,41 +1,25 @@
-/* Positions */
-.top {
-    top: 10%;
+/* Container Styling */
+.welcome-container {
+  position: relative;
+}
 
-    transform: translateX(-50%);
-  }
-  
-  .left {
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-  }
-  
-  .right {
-    top: 50%;
-    right: 10%;
-    transform: translateY(-50%);
-  }
-  
-  .bottom {
-    bottom: 10%;
- 
-    transform: translateX(-50%);
-  }
-  
-  /* Effet de fade-in */
-  .fade-in {
-    animation: fadeIn 2s ease-in-out forwards;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+/* SVG Handwriting Effect */
+.signature-svg {
+  width: 800px; /* Adjust width as needed */
+  height: auto;
+  stroke: white;
+  stroke-width: 2;
+  fill: none
+}
+
+/* Text Fade-in Effect */
+.fade-text {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-text.visible {
+  opacity: 1;
+}
+
+
