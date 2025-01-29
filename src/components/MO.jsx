@@ -19,12 +19,10 @@ export default function MO() {
   };
 
   return (
-    <section className="bg-white h-screen flex items-center justify-center relative">
+    <section className=" h-screen flex items-center justify-center relative">
       
-      {/* Title on Top Left */}
-      <h1 className="absolute top-4 left-4 text-3xl font-bold text-white z-10">Your Title</h1>
+      <h1 className="absolute top-4 left-4 text-3xl font-bold text-white z-10">Decouvrez leurs histoires</h1>
 
-      {/* Swiper for Background Images */}
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -43,13 +41,12 @@ export default function MO() {
           <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${bg})` }}></div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${bg2})`, opacity: 0.5 }}></div>
+          <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${bg2})` }}></div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${bg3})`, opacity: 0.3 }}></div>
+          <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${bg3})`}}></div>
         </SwiperSlide>
 
-        {/* Autoplay Progress */}
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
@@ -58,9 +55,8 @@ export default function MO() {
         </div>
       </Swiper>
 
-      {/* Text in the Middle */}
       <div className="absolute w-full h-full flex items-center justify-center z-10">
-        <h1 className="text-5xl font-bold text-white text-center">Centered Text</h1>
+        <h1 className="text-5xl font-bold text-white text-center">Michel & Odile</h1>
       </div>
     </section>
   );
